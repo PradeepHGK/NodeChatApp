@@ -1,13 +1,13 @@
-const app = require('express');
+const app = require('express')()
 const logs = require('console');
 var datetime = Date();
-var api = app();
-const http = require('http').createServer(api)
-var io = require('socket.io')(80);
+
+const http = require('http').createServer(app)
+// var io = require('socket.io')(80);
 
 PORTValues = process.env.PORT;
 
-api.get('/api/v1/nodechat', (req, res) => {
+app.get('/api/v1/nodechat', (req, res) => {
     res.json({
         Servername: "Node Chat App",
         FE: "Flutter",
@@ -44,8 +44,8 @@ socketio.on("connection", (userSocket) => {
     // })
 })
 
-api.listen(1594, () => {
-    logs.log("Node app listening to the port: 1594")
+http.listen(1594, () => {
+    logs.log("Node-http app listening to the port: 1594")
 });
 
 // http://34.224.17.169:1594/api/v1/nodechat //Seriver URL
