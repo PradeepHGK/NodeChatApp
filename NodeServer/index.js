@@ -47,5 +47,5 @@ socketio.on("connection", (userSocket) => {
 
 
 api.listen(1594, () => {
-    logs.log("Hello")
+    logs.log("Node app listening to the port: 1594")
 });
