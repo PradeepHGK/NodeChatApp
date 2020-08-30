@@ -44,8 +44,8 @@ socketio.on("connection", (userSocket) => {
     // })
 })
 
-http.listen(process.env.PORT, () => {
-    logs.log("Node-http app listening to the port: ", process.env.PORT)
+http.listen(1594, () => {
+    logs.log("Node-http app listening to the port: ", 1594)
 });
 
 // http://34.224.17.169:1594/api/v1/nodechat //Seriver URL
