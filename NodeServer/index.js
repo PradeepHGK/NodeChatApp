@@ -7,7 +7,7 @@ var io = require('socket.io')(80);
 
 PORTValues = process.env.PORT;
 
-api.get('/nodechat', (req, res) => {
+api.get('/api/v1/nodechat', (req, res) => {
     res.json({
         Servername: "Node Chat App",
         FE: "Flutter",
