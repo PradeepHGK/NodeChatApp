@@ -37,15 +37,15 @@ socketio.on("connection", (userSocket) => {
         userSocket.broadcast.emit("receive_message", data)
         logs.log("User_Connected");
     })
-
-    //Disconnect Event 
-    userSocket.on("disconnect", (disconnectData) => {
-        userSocket.broadcast.emit("ReceiceDisconnect", disconnectData);
-        logs.log("User_Disconnected");
-    })
+    // //Disconnect Event 
+    // userSocket.on("disconnect", (disconnectData) => {
+    //     userSocket.broadcast.emit("ReceiceDisconnect", disconnectData);
+    //     logs.log("User_Disconnected");
+    // })
 })
-
 
 api.listen(1594, () => {
     logs.log("Node app listening to the port: 1594")
 });
+
+// http://34.224.17.169:1594/api/v1/nodechat //Seriver URL
