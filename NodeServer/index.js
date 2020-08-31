@@ -12,7 +12,12 @@ server.listen(port, () => {
 
 // Routing
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.get('/getname', (req, res) => {
+    res.json({
+        Name: "Pradeep",
+        date: "01020303"
+    })
+})
 // Chatroom
 
 var numUsers = 0;
@@ -40,6 +45,7 @@ io.on('connection', (socket) => {
         socket.emit('login', {
             numUsers: numUsers
         });
+
         // echo globally (all clients) that a person has connected
         socket.broadcast.emit('user joined', {
             username: socket.username,
